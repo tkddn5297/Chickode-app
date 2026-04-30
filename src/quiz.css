@@ -1,0 +1,129 @@
+/* [1] 전체 배경 및 폰트 설정 */
+:root {
+  --main-brown: #5D4037;
+  --point-brown: #8D6E63;
+  --bg-color: #FDFBF9;
+}
+
+.play-view {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* [2] 상단 내비바 - 큼직하게 유지 */
+.play-nav {
+  height: 70px;
+  background-color: var(--point-brown);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  color: white;
+  border-bottom: 4px solid var(--main-brown);
+}
+.nav-logo { font-size: 28px; font-weight: 900; letter-spacing: 3px; }
+.chap-badge { 
+  background: white; color: var(--main-brown); 
+  padding: 6px 20px; border-radius: 25px; 
+  font-weight: 800; font-size: 18px; border: 3px solid var(--main-brown);
+}
+
+/* [3] 메인 콘텐츠 레이아웃 - 전체화면에서 벌어짐 방지 */
+.play-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 340px 1fr 400px; /* 좌/우 판넬 너비 고정 */
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 1920px; /* 고해상도 모니터 대응 */
+  margin: 0 auto;    /* 중앙 정렬 */
+  width: 100%;
+}
+
+/* [4] 공통 클레이 모피즘 스타일 */
+.clay-card {
+  background: #FFFFFF;
+  border: 5px solid var(--main-brown);
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 8px 8px 0 #D7CCC8;
+}
+
+/* 좌측 문제 박스 - 가독성 최우선 */
+.problem-box { min-height: 220px; display: flex; flex-direction: column; }
+.problem-title { font-size: 24px; font-weight: 800; color: var(--main-brown); margin-bottom: 12px; }
+.problem-desc { font-size: 21px; line-height: 1.6; color: #333; word-break: keep-all; }
+
+/* 힌트 영역 */
+.hint-area { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+.hint-btn {
+  padding: 18px; background: #FFF9E6; border: 3px solid var(--main-brown); 
+  border-radius: 18px; font-weight: 800; font-size: 20px; cursor: pointer;
+  text-align: left; box-shadow: 4px 4px 0 #BCAAA4;
+}
+
+.chick-character { margin-top: auto; text-align: left; }
+.chick-character img { width: 140px; }
+
+/* [5] 중앙 섹션 - 에디터와 터미널 */
+.center-pane { display: flex; flex-direction: column; gap: 20px; height: 100%; }
+
+.input-area {
+  flex: 1.3; /* 에디터 공간을 더 넓게 */
+  background: #282C34;
+  border: 5px solid var(--main-brown);
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 #D7CCC8;
+}
+
+.terminal-box {
+  flex: 0.7; /* 터미널 공간 */
+  background: #1E1E1E;
+  border: 5px solid var(--main-brown);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.term-header { background: #333; padding: 10px 25px; color: #AAA; font-size: 16px; font-weight: bold; border-bottom: 4px solid var(--main-brown); }
+.term-body { padding: 20px; font-family: 'Fira Code', monospace; color: #EEE; font-size: 18px; }
+
+/* 제출하기 버튼 - 화면 하단에 꽉 차게 */
+.submit-btn {
+  height: 85px; 
+  background: var(--main-brown); 
+  color: white;
+  border-radius: 20px; 
+  font-size: 32px; 
+  font-weight: 900; 
+  cursor: pointer;
+  box-shadow: 0 10px 0 #3E2723; 
+  border: none;
+  margin-top: auto;
+}
+
+/* [6] 우측 섹션 - 채팅창 */
+.chat-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #F5EFE6;
+  border: 5px solid var(--main-brown);
+  border-radius: 30px;
+  box-shadow: 8px 8px 0 #D7CCC8;
+  overflow: hidden;
+}
+.chat-messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+.bubble {
+  background: white; border: 3px solid var(--main-brown);
+  padding: 15px 20px; border-radius: 18px; font-size: 18px; font-weight: 600;
+  max-width: 85%; box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
+}
+.chat-input { display: flex; padding: 15px; background: white; border-top: 5px solid var(--main-brown); gap: 10px; }
+.chat-input input { flex: 1; border: 3px solid var(--main-brown); border-radius: 12px; padding: 10px 15px; font-size: 17px; }

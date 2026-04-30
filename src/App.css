@@ -1,0 +1,65 @@
+/* [1] 배경 및 전체 레이아웃 복구 - 기존 동일 */
+.main-container {
+  position: relative; width: 100vw; height: 100vh;
+  background-image: url('/images/배경.png'); background-size: 100% 100%; 
+  background-position: center; background-repeat: no-repeat;
+  display: flex; flex-direction: column; align-items: center; overflow: hidden;
+}
+
+/* [2] 내비게이션 바 - 기존 동일 */
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 120px;
+  background-color: rgba(20, 15, 10, 0.95); display: flex;
+  justify-content: space-between; align-items: center; padding: 0 60px;
+  z-index: 1000; transition: transform 0.4s ease-in-out; box-sizing: border-box;
+}
+.navbar.closed { transform: translateY(-120px); }
+.menu-toggle-btn { background: none; border: none; color: white; font-size: 60px; cursor: pointer; }
+.nav-logo { color: white; font-family: 'Arial Black', sans-serif; font-size: 50px; letter-spacing: 3px; }
+.nav-menu { display: flex; gap: 60px; }
+.nav-menu button { background: none; border: none; color: white; font-size: 36px; font-weight: 900; cursor: pointer; }
+.floating-menu-btn { position: fixed; top: 20px; left: 30px; z-index: 999; font-size: 60px; color: #5d4037; background: none; border: none; cursor: pointer; }
+
+/* [3] 제목 및 하단 버튼 스타일 - 기존 동일 */
+.header { margin-top: 18vh; text-align: center; }
+.glow-title { font-size: 6vw; color: #fff9e6; text-shadow: 0.4vw 0.4vw 0px #8d6e63; margin: 0; }
+.subtitle { font-size: 1.8vw; color: #5d4037; background-color: rgba(255, 255, 255, 0.7); padding: 0.5vw 3vw; border-radius: 50px; display: inline-block; }
+.button-wrapper { position: absolute; bottom: 5vh; display: flex; justify-content: center; gap: 1vw; }
+.btn-link { background: transparent !important; border: none !important; padding: 0 !important; cursor: pointer; outline: none !important; }
+.btn-link img { width: 17vw; max-width: 320px; height: auto; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.4)); display: block; }
+
+/* [4] 대형 모달 레이아웃 - 기존 유지 */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 2000; }
+.modal-content {
+  background-color: #FFF9F0; border: 6px solid #5D4037; border-radius: 40px;
+  padding: 60px; width: 850px; position: relative; box-shadow: 0 15px 0 #D7CCC8;
+}
+.modal-title { font-family: 'Arial Black', sans-serif; color: #5D4037; font-size: 45px; margin: 0; }
+.modal-divider { border-bottom: 4px dashed #BCAAA4; margin: 20px 0 35px 0; }
+.close-x { position: absolute; top: 30px; right: 30px; background: #E57373; color: white; border: 3px solid #5D4037; border-radius: 12px; width: 50px; height: 50px; cursor: pointer; font-size: 30px; }
+
+/* 챕터 카드 내부 요소 */
+.chapter-section h3 { font-size: 30px; color: #8D6E63; margin-top: 30px; }
+.chapter-card { background: white; border: 4px solid #5D4037; border-radius: 20px; padding: 25px; margin-bottom: 20px; cursor: pointer; font-size: 28px; font-weight: bold; color: #5D4037; }
+.progress-bg { background: #E0E0E0; height: 15px; border-radius: 15px; margin-top: 15px; }
+.progress-fill { background: #A1887F; height: 100%; border-radius: 15px; }
+
+/* [수정] 퀴즈 설정 상세 요소 밸런스 조정 */
+.setting-item { margin-bottom: 35px; text-align: left; }
+.setting-item label { font-size: 45px; color: #5D4037; font-weight: bold; display: block; margin-bottom: 15px; }
+
+.range-wrapper { display: flex; align-items: center; gap: 20px; font-size: 22px; color: #8D6E63; font-weight: bold; }
+.custom-range { flex: 1; accent-color: #8D6E63; height: 30px; cursor: pointer; }
+
+/* 문제 수 입력창이 혼자 너무 길지 않게 너비 조절 */
+.q-count-input { 
+  width: 150px !important; /* 가로 크기를 적당히 줄임 */
+  text-align: center; 
+}
+
+.custom-input, .custom-select { padding: 30px; border: 4px solid #5D4037; border-radius: 15px; font-size: 38px; color: #5D4037; }
+
+/* 난이도 선택창도 너무 길면 width 조절 가능 */
+.custom-select { width: 350px !important; }
+
+.start-quiz-btn { width: 100%; padding: 25px; background-color: #5D4037; color: white; border-radius: 20px; font-size: 40px; font-weight: bold; cursor: pointer; margin-top: 20px; box-shadow: 0 10px 0 #3E2723; }

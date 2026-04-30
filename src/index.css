@@ -1,0 +1,17 @@
+/* index.css - 기본 여백 제거 */
+:root {
+  font-family: 'NanumSquare', sans-serif; /* 폰트가 있다면 적용 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 스크롤 방지 */
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
