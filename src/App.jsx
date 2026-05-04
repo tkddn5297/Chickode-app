@@ -50,7 +50,7 @@ export default function App() {
           <button onClick={() => setShowChapterModal(true)}>문제풀이</button>
           <button>오답노트</button>
           <button>패턴분석</button>
-          <button>미니게임</button>
+          <button onClick={() => navigate('/game')}>미니게임</button>
         </div>
       </nav>
 
@@ -62,13 +62,26 @@ export default function App() {
       </div>
 
       <div className="button-wrapper">
-        <button className="btn-link" onClick={() => setShowChapterModal(true)}>
-          <img src="/images/버튼_1.png" alt="문제풀기" />
-        </button>
-        <button className="btn-link"><img src="/images/버튼_2.png" alt="오답노트" /></button>
-        <button className="btn-link"><img src="/images/버튼_3.png" alt="패턴분석" /></button>
-        <button className="btn-link"><img src="/images/버튼_4.png" alt="미니게임" /></button>
-      </div>
+  {/* 1. 문제풀기 */}
+  <button className="btn-link" onClick={() => setShowChapterModal(true)}>
+    <img src="/images/버튼_1.png" alt="문제풀기" />
+  </button>
+  
+  {/* 2. 오답노트 */}
+  <button className="btn-link">
+    <img src="/images/버튼_2.png" alt="오답노트" />
+  </button>
+  
+  {/* 3. 패턴분석 */}
+  <button className="btn-link">
+    <img src="/images/버튼_3.png" alt="패턴분석" />
+  </button>
+  
+  {/* 4. 캐릭터 키우기 (커스텀 마이징) -> 버그 게임으로 연결 */}
+  <button className="btn-link" onClick={() => navigate('/game')}>
+    <img src="/images/버튼_4.png" alt="미니게임" />
+  </button>
+</div>
 
       {showChapterModal && (
         <div className="modal-overlay" onClick={() => setShowChapterModal(false)}>

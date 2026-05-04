@@ -2,6 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import App from './App';
 import Quiz from './quiz'; // [수정] Play 대신 quiz.jsx를 가져옵니다.
+import BugGame from './BugGame'
 
 export default function Router() {
   return (
@@ -9,6 +10,7 @@ export default function Router() {
       <Route path="/" element={<App />} />
       {/* 주소 /play로 들어오면 Quiz 컴포넌트를 보여줍니다. */}
       <Route path="/play" element={<Quiz />} />
+      <Route path="/game" element={<BugGame />} />
     </Routes>
   );
 }
